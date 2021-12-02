@@ -120,13 +120,15 @@ const getUVlevel = () => {
     <View style={{flex: 135}}>
       <Text style={{textAlign:'right', paddingHorizontal: 30, color: 'white',paddingBottom:3}}>Yesterday: {maxMinTemp[0]}°/{maxMinTemp[1]}°</Text>
       <View style={styles.bordercontainer}>
-        <View style={{flex: 1, margin: 5, alignItems: 'center'}}>
-          <Text style={styles.centertext}>Precipitation{"\n"}{data.current.humidity}%</Text>
+        <View style={{flex: 1, margin: 5, alignItems: 'center', flexDirection: 'row', justifyContent: 'center'}}>
+          <Image source={{uri: 'https://cdn-icons-png.flaticon.com/512/727/727802.png'}}  resizeMode={'contain'} tintColor={'white'} style={{width: 32, height: 32,alignSelf: 'center'}}></Image>
+          <Text style={{textAlignVertical: 'center', color: 'white'}}>Precipitation{"\n"}{data.current.humidity}%</Text>
         </View>
         <View style={{height: "45%", width: 1,backgroundColor:'white', alignSelf: 'center', borderRadius: 10}}></View>
           
-        <View style={{flex: 1, margin: 5, alignItems: 'center'}}>
-          <Text style={styles.centertext}>UV Index{"\n"}{getUVlevel()}</Text>
+        <View style={{flex: 1, margin: 5, alignItems: 'center', flexDirection: 'row', justifyContent: 'center'}}>
+          <Image source={{uri: 'https://cdn-icons-png.flaticon.com/512/106/106061.png'}}  resizeMode={'contain'} tintColor={'white'} style={{width: 32, height: 32,alignSelf: 'center'}}></Image>
+          <Text style={{textAlignVertical: 'center', color: 'white'}}>UV Index{"\n"}{getUVlevel()}</Text>
         </View>
       </View>
     </View>
