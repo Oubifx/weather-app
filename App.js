@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { StyleSheet, Text, TextInput, View, Image, KeyboardAvoidingView} from 'react-native';
+import { StyleSheet, Text, TextInput, View, Image} from 'react-native';
 import { LinearGradient } from "expo-linear-gradient"
 
 
@@ -13,7 +13,7 @@ const AppScreen = () => {
 
   const getWeatherFromApi = async () => {
     try {
-      const response = await fetch('http://api.weatherapi.com/v1/forecast.json?key=526d4889d65b48cabba160455213011&q=San francisco&days=2&aqi=no&alerts=no')
+      const response = await fetch('http://api.weatherapi.com/v1/forecast.json?key=526d4889d65b48cabba160455213011&q=Melitopol, Ukraine&days=2&aqi=no&alerts=no')
       const jsonData = await response.json();
       setData(jsonData);
     } catch (error) {
@@ -127,7 +127,7 @@ const getUVlevel = () => {
         <View style={{height: "45%", width: 1,backgroundColor:'white', alignSelf: 'center', borderRadius: 10}}></View>
           
         <View style={{flex: 1, margin: 5, alignItems: 'center', flexDirection: 'row', justifyContent: 'center'}}>
-          <Image source={{uri: 'https://cdn-icons-png.flaticon.com/512/106/106061.png'}}  resizeMode={'contain'} tintColor={'white'} style={{width: 32, height: 32,alignSelf: 'center'}}></Image>
+          <Image source={{uri: 'https://cdn-icons-png.flaticon.com/512/106/106061.png'}}  resizeMode={'contain'} tintColor={'white'} style={{width: 32, height: 32,alignSelf: 'center', marginRight: 5}}></Image>
           <Text style={{textAlignVertical: 'center', color: 'white'}}>UV Index{"\n"}{getUVlevel()}</Text>
         </View>
       </View>
